@@ -1,0 +1,86 @@
+.NavDiv {
+    background-color: #2e2e2e;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    flex-direction: row;
+    position: fixed;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.Input {
+    height: 70%;
+    align-self: center;
+    font-family: gba;
+    margin-right: 4%;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.ButtonNav {
+    height: 4%;
+    align-self: center;
+    right: 1.7%;
+    cursor: pointer;
+    position: fixed;
+}
+
+.ButtonNav:active {
+    height: 3.7%;
+}
+
+.Logo {
+    display: flex;
+    align-self: center;
+    margin-right: 10%;
+    width: 35px;
+    height: 35px;
+    color: whitesmoke;
+    font-family: gba;
+}
+
+.TitleNav {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-left: 10%;
+}
+
+.TitleNav:hover {
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    color: #FFFFFF;
+}
+
+.CreateNav {
+    display: flex;
+    color: whitesmoke;
+    justify-self: center;
+    align-self: center;
+    margin-right: 3%;
+    flex-direction: row;
+    column-gap: 5%;
+    font-family: gba;
+}
+
+.CreateNav:hover {
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    color: #FFFFFF;
+}
+
+.AboutNav {
+    display: flex;
+    color: whitesmoke;
+    justify-self: center;
+    align-self: center;
+    margin-right: 52%;
+    flex-direction: row;
+    column-gap: 5%;
+    font-family: gba;
+}
+
+.AboutNav:hover {
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    color: #FFFFFF;
+}
+

@@ -1,0 +1,55 @@
+.Card {
+    width: 100%;
+    background-color: #EB5E0B;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 3% 3% 3% 3%;
+    border-radius: 5%;
+    justify-content: center;
+    align-content: center;
+    padding-top: 0.8%;
+    font-family: gba;
+    font-size: x-large;
+    color: whitesmoke;
+    border: 2px solid transparent;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.Img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+    background-color: whitesmoke;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.Img:hover {
+    width: 210px;
+    height: 210px;
+    background-color: white;
+    transition-duration: 0.1s;
+}
+
+.Card:hover {
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.Img:active {
+    height: 160px;
+    width: 160px;
+}
+
+.cardDiv {
+    border-radius: 10%;
+}
+
+.wordsCard{
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.demotext {
+    color: whitesmoke;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    }

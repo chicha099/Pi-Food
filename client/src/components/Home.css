@@ -1,0 +1,76 @@
+.MainDiv {
+    display: flex;
+    flex-direction: row;
+    width: 91%;
+    padding-top: 3%;
+    margin-left: 10%;
+}
+
+.Recipes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    flex-direction:row;
+    column-gap: 1%;
+    width: 53%;
+    margin-top: 1.7%;
+}
+
+.pageMarkers {
+    border: 1px solid black;
+}
+
+.Font {
+    font-family: gba;
+    font-size: small;
+    height: 3%;
+    border: 1px solid transparent;
+    background-color: #EB5E0B;
+    color: whitesmoke;
+    border-radius: 2px;
+    margin-left: 1%;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 0.5px 0.5px 2px rgba(0,0,0,.5);
+}
+
+.optionsHome {
+    background-color: whitesmoke;
+    color: #EB5E0B;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.notFound {
+    display: flex;
+    margin-top: 100%;
+    margin-left: 200%;
+}
+
+.loadingHome {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    flex-direction: column;
+    align-content: center;
+    font-family: gba;
+}
+
+.loadingMew {
+    height: 200px;
+    width: 200px;
+    margin-left: 45%;
+}
+
+select {
+    cursor: pointer;
+}
+
+option {
+    cursor: pointer;
+}
+
+.selectHome {
+position: fixed;
+left: 60%;
+display: flex;
+}

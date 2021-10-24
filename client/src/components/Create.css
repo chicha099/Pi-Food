@@ -1,0 +1,94 @@
+.mainCreate {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    font-family: 'gba';
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+}
+
+.FormDiv {
+    margin-top: 5%;
+}
+
+.InputsCreate{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1%;
+    margin-top: 2%;
+    margin-left: 40%;
+    justify-content: flex-end;
+    height: 30px;
+}
+
+.typeInputs {
+    display: flex;
+    flex-direction: row;
+    width: 30.4%;
+}
+
+.sInput {
+    margin-top: 2%;
+}
+
+.Options {
+    width: 100%;
+}
+
+.ErrorCreate {
+    color: red;
+    display: flex;
+}
+
+.buttonCreate {
+    margin-top: 1%;
+    margin-left: 81.8%;
+    width: 18.2%;
+    height: 40px;
+    font-family: gba;
+    font-size: large;
+    border: 0xp solid transparent;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.buttonCreate:hover {
+    width: 20%;
+    height: 42px;
+    margin-left: 81%;
+}
+
+
+.formPrincipal {
+    display: flex;
+    flex-direction: row;
+}
+
+.statsForm {
+    width: 20%;
+    padding-bottom: 0.5%;
+    margin-left: 2%;
+    margin-top: 1%;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    color: #2e2e2e;
+    border: 1px solid black;
+    border-radius: 1%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.noName{
+    color: whitesmoke;
+    text-shadow: -1px -1px 1px whitesmoke, 1px 1px 1px whitesmoke;
+}
+.formStatsImg {
+    background-color: rgb(209, 209, 209);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+

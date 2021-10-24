@@ -1,0 +1,40 @@
+.Pages {
+    display: flex;
+    justify-content: center;
+    column-gap: 0.9%;
+    height: 30px;
+    
+}
+
+.Page {
+    border-radius: 10%;
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid transparent;
+    background-color:white;
+    font-family: gba;
+    color: black;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.Page:hover {
+    transition-duration: 0.2s;
+    background-color: #EB5E0B;
+    color: whitesmoke;
+    border: 1px solid transparent;
+    width: 33px;
+    height: 33px;
+}
+
+.Page:active {
+    transition-duration: 0.1;
+    width: 27px;
+    height: 27px;
+}
+
+.footer {
+    height: auto;
+    position: fixed;
+    bottom: 37px;
+    left: 960px
+}

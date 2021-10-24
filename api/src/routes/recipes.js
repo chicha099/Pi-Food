@@ -16,7 +16,6 @@ router.get("/", (req, res) => {
     if (name) {
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100&query=${name}`)
             .then(respApi => {
-
                 recipesApiName = respApi.data.results.map(r => {
                     let diets;
                     r.vegetarian ? diets = r.diets.concat("vegetarian") : diets = r.diets;
@@ -27,7 +26,8 @@ router.get("/", (req, res) => {
                         healthScore: r.healthScore,
                         steps: r.analyzedInstructions[0],
                         image: r.image,
-                        diets: diets,
+                        types: diets,
+                        id: r.id
                     }
                 });
                 return (Recipe.findAll({
@@ -57,7 +57,8 @@ router.get("/", (req, res) => {
                         healthScore: r.healthScore,
                         steps: r.analyzedInstructions[0],
                         image: r.image,
-                        diets: diets
+                        types: diets,
+                        id: r.id
                     }
                 });
                 return (Recipe.findAll({
@@ -68,7 +69,18 @@ router.get("/", (req, res) => {
                 }))
             })
             .then(respDb => {
-                recipesDb = respDb;
+                recipesDb = respDb.map(r => {
+                    return {
+                        title: respDb[0].dataValues.title,
+                        summary: respDb[0].dataValues.summary,
+                        spoonacularScore: respDb[0].dataValues.spoonacularScore,
+                        healthScore: respDb[0].dataValues.healthScore,
+                        steps: respDb[0].dataValues.steps,
+                        image: respDb[0].dataValues.image,
+                        types: respDb[0].dataValues.types.map(t => { return t.name}),
+                        id: respDb[0].dataValues.id
+                    }
+                });
                 const allRecipes = [...recipesApi, ...recipesDb];
                 return res.json(allRecipes)
             })
@@ -88,7 +100,8 @@ router.get("/:id", (req, res) => {
                 healthScore: respId.data.healthScore,
                 steps: respId.data.analyzedInstructions[0].steps,
                 image: respId.data.image,
-                diets: diets
+                types: diets,
+                id: r.id
             }
             return res.json(infoId)
         })
