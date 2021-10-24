@@ -59,7 +59,7 @@ export function searchName(name) {
 
 export function postRecipe(payload) {
     return function (dispatch) {
-        axios.post('http://localhost:3001/recipe', payload)
+        axios.post('http://localhost:3001/recipes', payload)
             .then(resp => {
                 return resp;
             })

@@ -21,11 +21,15 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 types: action.payload
             };
-            case 'SET_PAGE':
-                return {
-                    ...state,
-                    page: action.payload
-                }
+        case 'SET_PAGE':
+            return {
+                ...state,
+                page: action.payload
+            };
+        case 'POST_RECIPE':
+            return {
+                ...state
+            };
         default:
             return state;
     }

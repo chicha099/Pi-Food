@@ -66,21 +66,23 @@ router.get("/", (req, res) => {
                         model: Types,
                         attributes: ['name']
                     }
-                }))
+                }));
             })
             .then(respDb => {
                 recipesDb = respDb.map(r => {
                     return {
-                        title: respDb[0].dataValues.title,
-                        summary: respDb[0].dataValues.summary,
-                        spoonacularScore: respDb[0].dataValues.spoonacularScore,
-                        healthScore: respDb[0].dataValues.healthScore,
-                        steps: respDb[0].dataValues.steps,
-                        image: respDb[0].dataValues.image,
-                        types: respDb[0].dataValues.types.map(t => { return t.name}),
-                        id: respDb[0].dataValues.id
+                        title: r.dataValues.title,
+                        summary: r.dataValues.summary,
+                        spoonacularScore: r.dataValues.spoonacularScore,
+                        healthScore: r.dataValues.healthScore,
+                        steps: r.dataValues.steps,
+                        image: r.dataValues.image,
+                        types: r.dataValues.types.map(t => { return t.name}),
+                        id: r.dataValues.id
                     }
                 });
+                
+                console.log(recipesDb)
                 const allRecipes = [...recipesApi, ...recipesDb];
                 return res.json(allRecipes)
             })

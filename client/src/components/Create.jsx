@@ -27,19 +27,37 @@ export default function Detail() {
         image: '',
         spoonacularScore: 0,
         healthScore: 0,
-        steps: '',
+        steps: [],
         summary: ''
     });
+
+    console.log(input)
 
     function handleOnChange(e) {
         e.preventDefault();
         const name = e.target.name;
         let value = e.target.value;
 
-        setInput({
-            ...input,
-            [name]: value
-        })
+        if (name === "types") {
+            value = [...input.types, value];
+            setInput({
+                ...input,
+                [name]: value
+            })
+        }
+        else if (name === "steps") {
+            setInput({
+                ...input,
+                [name]: value
+            })
+        }
+        else {
+            setInput({
+                ...input,
+                [name]: value
+            })
+        }
+
 
         switch (name) {
             case 'title':
@@ -49,19 +67,19 @@ export default function Detail() {
                 value.slice(0, 4) !== 'http' ? setErrors({ ...errors, [name]: 'A valid url is required!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'types':
-                input.types.length === 0 ? setErrors({ ...errors, [name]: 'Both types are required!' }) : setErrors({ ...errors, [name]: '' });
+                input.types.length !== 0 ? setErrors({ ...errors, [name]: 'A type is required!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'spoonacularScore':
-                value < 1 ? setErrors({ ...errors, [name]: 'HP must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
+                value < 1 ? setErrors({ ...errors, [name]: 'Must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'healthScore':
-                value < 1 ? setErrors({ ...errors, [name]: 'Force must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
+                value < 1 ? setErrors({ ...errors, [name]: 'Must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'steps':
-                input.steps.length === 0 ? setErrors({ ...errors, [name]: 'Defense must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
+                input.steps.length === 0 ? setErrors({ ...errors, [name]: 'Steps are required!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'summary':
-                value.length < 1 ? setErrors({ ...errors, [name]: 'Summary must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
+                value.length < 1 ? setErrors({ ...errors, [name]: 'A summary is required!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             default:
                 break;
@@ -132,7 +150,7 @@ export default function Detail() {
                         <div className='InputsCreate'>
                             {!errors.steps ? null : <div className='ErrorCreate'>{errors.steps}</div>}
                             <label>Steps:</label>
-                            <input type="number" name="steps" onChange={(e => handleOnChange(e))} value={input.steps} />
+                            <input type="text" name="steps" onChange={(e => handleOnChange(e))} value={input.steps} />
                         </div>
                         <div >
                             <button className='buttonCreate' disabled={errors.title || errors.image || errors.types || errors.summary || errors.steps || errors.spoonacularScore || errors.healthScore} type="submit" onClick={(e => handlePost(e))}>Create</button>
