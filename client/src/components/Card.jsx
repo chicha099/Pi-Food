@@ -17,8 +17,10 @@ export default function Card({ name, types, img, id }) {
             <div className='cardDiv'>
                 <div className='Card' >
                     <img src={img} alt="img not found" className='Img' />
-                    <h5 className='demotext'>{name}</h5>
-                    <h6 className='demotext'>{types}</h6>
+                    <div className="">
+                        <h5 className='demotext'>{name}</h5>
+                        <h6 className='cardTypes'>{types}</h6>
+                    </div>
                 </div>
             </div>
         </span>

@@ -16,7 +16,7 @@ export default function Home() {
     const allTypes = useSelector((state) => state.types);
 
     const currentPage = useSelector((state) => state.page);
-    const recipesPerPage = 9;
+    const recipesPerPage = 12;
     const lastRecipeIndex = currentPage * recipesPerPage;
     const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
     const currentRecipes = Array.isArray(allRecipes) ? allRecipes.slice(firstRecipeIndex, lastRecipeIndex) : [allRecipes];
@@ -40,7 +40,7 @@ export default function Home() {
                     <Nav />
                     <div id='main' className='MainDiv'>
                         <Sidebar />
-                        <div className='fixPages'>
+                        <div>
                             <div className='selectHome' >
                                 <select onChange={e => handleOrderByName(e)} className='Font'>
                                     <option value="" selected disabled hidden>Sort</option>
@@ -56,9 +56,12 @@ export default function Home() {
                             <div id="recipes" className='Recipes'>
                                 {
                                     currentRecipes && currentRecipes.map(p => {
+                                        let typesCaps = p.types.map(p => {
+                                            return (p[0].toUpperCase() + p.slice(1))
+                                        })
                                         return (
                                             <div>
-                                                <Card name={p.title} types={p.types} img={p.image} id={p.id} />
+                                                <Card name={p.title} types={typesCaps} img={p.image} id={p.id} />
                                             </div>
                                         )
                                     }

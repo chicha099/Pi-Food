@@ -3,7 +3,7 @@
     height: 5vh;
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    width: 99%;
     flex-direction: row;
     position: fixed;
     overflow: hidden;

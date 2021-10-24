@@ -1,5 +1,7 @@
 .Card {
-    width: 100%;
+    max-width: 305px;
+    min-width: 305px;
+    height: 460px;
     background-color: #EB5E0B;
     display: flex;
     flex-direction: column;
@@ -8,7 +10,7 @@
     border-radius: 5%;
     justify-content: center;
     align-content: center;
-    padding-top: 0.8%;
+
     font-family: gba;
     font-size: x-large;
     color: whitesmoke;
@@ -17,28 +19,18 @@
 }
 
 .Img {
-    width: 200px;
-    height: 200px;
+    width: 310px;
+    height: 230px;
     border-radius: 5%;
+    /* padding-bottom: 10px; */
     background-color: whitesmoke;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.Img:hover {
-    width: 210px;
-    height: 210px;
-    background-color: white;
-    transition-duration: 0.1s;
 }
 
 .Card:hover {
     border: 2px solid transparent;
     cursor: pointer;
-}
-
-.Img:active {
-    height: 160px;
-    width: 160px;
+    height: 470px;
 }
 
 .cardDiv {

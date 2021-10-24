@@ -35,7 +35,6 @@ export default function Sidebar() {
                     })
                 }
                 <div className='Filter2'>
-                    <div className='line'>_________________________________</div>
                     <div className='OriginalsNCreated'>
                         <div >
                             <button id='all' name="filters" value='all' onClick={e => handleFilterTypes(e)} className='ButtonFilterOther' />

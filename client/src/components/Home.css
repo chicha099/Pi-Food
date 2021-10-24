@@ -1,9 +1,9 @@
 .MainDiv {
     display: flex;
     flex-direction: row;
-    width: 91%;
+    /* width: 100%; */
     padding-top: 3%;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 .Recipes {
@@ -12,8 +12,8 @@
     margin-left: 10%;
     flex-direction:row;
     column-gap: 1%;
-    width: 53%;
-    margin-top: 1.7%;
+    width: 70%;
+    margin-top: 0.3%;
 }
 
 .pageMarkers {
@@ -28,7 +28,7 @@
     background-color: #EB5E0B;
     color: whitesmoke;
     border-radius: 2px;
-    margin-left: 1%;
+    margin-left: 0.5%;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 0.5px 0.5px 2px rgba(0,0,0,.5);
 }
@@ -70,7 +70,7 @@ option {
 }
 
 .selectHome {
-position: fixed;
-left: 60%;
+/* position: fixed; */
+margin-left: 60%;
 display: flex;
 }

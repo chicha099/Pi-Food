@@ -3,7 +3,7 @@
     justify-content: center;
     column-gap: 0.9%;
     height: 30px;
-    
+   
 }
 
 .Page {
@@ -14,16 +14,18 @@
     background-color:white;
     font-family: gba;
     color: black;
+    opacity: 70%;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 
 .Page:hover {
     transition-duration: 0.2s;
-    background-color: #EB5E0B;
-    color: whitesmoke;
+    /* background-color: #EB5E0B; */
+    color: black;
     border: 1px solid transparent;
     width: 33px;
     height: 33px;
+    opacity: 100%;
 }
 
 .Page:active {
