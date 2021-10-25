@@ -1,13 +1,16 @@
 import react from 'react';
-import { searchName, setPage } from '../actions';
+import { getRecipes, searchName, setPage } from '../actions';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { useHistory } from "react-router";
 import './Nav.css';
 
 export default function Nav() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
+    const history = useHistory();
 
     function handleInputChange(e) {
         e.preventDefault();
@@ -20,15 +23,21 @@ export default function Nav() {
         dispatch(searchName(name))
     }
 
+    function handleGoHome(e) {
+        e.preventDefault();
+        dispatch(getRecipes());
+        history.push('/home');
+    }
+
     return (
         <div className='NavDiv'>
 
-            <Link to='/home' className='Logo'>
+            <a className='Logo' onClick={(e) => handleGoHome(e)}>
                 <img src="./img/logonav.png" alt="" />
                 <div className='TitleNav'>
                     <h2>HENRY</h2>
                 </div>
-            </Link>
+            </a>
             <Link to='/create' className='CreateNav'>
                 <h2> Create </h2>
                 <h2> Recipe </h2>
@@ -42,7 +51,7 @@ export default function Nav() {
                 placeholder=' Search...'
                 onChange={(e) => handleInputChange(e)}
             />
-            <img src="./img/loupe.png" alt="" className='ButtonNav'  onClick={(e) => handleSubmit(e)}/>
+            <img src="./img/loupe.png" alt="" className='ButtonNav' onClick={(e) => handleSubmit(e)} />
         </div>
     )
 };

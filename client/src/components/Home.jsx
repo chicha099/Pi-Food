@@ -56,14 +56,19 @@ export default function Home() {
                             <div id="recipes" className='Recipes'>
                                 {
                                     currentRecipes && currentRecipes.map(p => {
-                                        let typesCaps = p.types.map(p => {
-                                            return (p[0].toUpperCase() + p.slice(1))
-                                        })
-                                        return (
-                                            <div>
-                                                <Card name={p.title} types={typesCaps} img={p.image} id={p.id} />
-                                            </div>
-                                        )
+                                        if (currentRecipes.length !== 0) {
+                                            let typesCaps = p.types.map(p => {
+                                                return (p[0].toUpperCase() + p.slice(1))
+                                            })
+                                            return (
+                                                <div>
+                                                    <Card name={p.title} types={typesCaps} img={p.image} id={p.id} />
+                                                </div>
+                                            )
+                                        }
+                                        else {
+                                            return (<h1 className='notFound'>The searched pokemon does not exist!</h1>)
+                                        }
                                     }
                                     )
                                 }

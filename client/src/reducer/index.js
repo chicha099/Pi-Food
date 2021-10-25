@@ -30,6 +30,12 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state
             };
+            case 'SEARCH_NAME':
+                // let filteredNames = allRecipes.filter(r => r.title === action.payload);
+                return {
+                    ...state,
+                    recipes: action.payload
+                }
         default:
             return state;
     }

@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const axios = require('axios');
 const { Recipe, Types } = require("../db.js");
-
+const { Op } = require("sequelize");
 const { YOUR_API_KEY } = process.env;
 const router = Router();
 
@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
     var recipesDb = [];
 
     if (name) {
+        console.log(name)
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100&query=${name}`)
             .then(respApi => {
                 recipesApiName = respApi.data.results.map(r => {
@@ -31,7 +32,11 @@ router.get("/", (req, res) => {
                     }
                 });
                 return (Recipe.findAll({
-                    where: { title: name },
+                    where: {
+                        title: {
+                            [Op.iLike]: `%${name}%`
+                        }
+                    },
                     include: {
                         model: Types,
                         attributes: ['name']
@@ -39,7 +44,18 @@ router.get("/", (req, res) => {
                 }))
             })
             .then(respDb => {
-                recipesDbName = respDb;
+                recipesDbName = respDb.map(r => {
+                    return {
+                        title: r.dataValues.title,
+                        summary: r.dataValues.summary,
+                        spoonacularScore: r.dataValues.spoonacularScore,
+                        healthScore: r.dataValues.healthScore,
+                        steps: r.dataValues.steps,
+                        image: r.dataValues.image,
+                        types: r.dataValues.types.map(t => { return t.name }),
+                        id: r.dataValues.id
+                    }
+                });
                 const allRecipesName = [...recipesApiName, ...recipesDbName];
                 return res.json(allRecipesName)
             })
@@ -77,11 +93,11 @@ router.get("/", (req, res) => {
                         healthScore: r.dataValues.healthScore,
                         steps: r.dataValues.steps,
                         image: r.dataValues.image,
-                        types: r.dataValues.types.map(t => { return t.name}),
+                        types: r.dataValues.types.map(t => { return t.name }),
                         id: r.dataValues.id
                     }
                 });
-                
+
                 console.log(recipesDb)
                 const allRecipes = [...recipesApi, ...recipesDb];
                 return res.json(allRecipes)
@@ -117,7 +133,7 @@ router.post('/', (req, res) => {
         healthScore,
         steps,
         image,
-        diets
+        types
     } = req.body;
 
     Recipe.create({
@@ -129,7 +145,7 @@ router.post('/', (req, res) => {
         image
     })
         .then(recipe => {
-            recipe.addTypes(diets)
+            recipe.addTypes(types)
                 .then(() => {
                     return res.send("OK")
                 });

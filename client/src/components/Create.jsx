@@ -67,7 +67,7 @@ export default function Detail() {
                 value.slice(0, 4) !== 'http' ? setErrors({ ...errors, [name]: 'A valid url is required!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'types':
-                input.types.length !== 0 ? setErrors({ ...errors, [name]: 'A type is required!' }) : setErrors({ ...errors, [name]: '' });
+                input.types.length === 0 ? setErrors({ ...errors, [name]: 'A type is required!' }) : setErrors({ ...errors, [name]: '' });
                 break;
             case 'spoonacularScore':
                 value < 1 ? setErrors({ ...errors, [name]: 'Must be higher than 0!' }) : setErrors({ ...errors, [name]: '' });
