@@ -17,6 +17,7 @@ export default function Sidebar() {
         dispatch(setPage(1));
         dispatch(filterRecipesByType(e.target.value));
     }
+console.log(allTypes)
 
     return (
         <div className='SidebarDiv'>

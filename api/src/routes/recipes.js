@@ -14,7 +14,6 @@ router.get("/", (req, res) => {
     var recipesDb = [];
 
     if (name) {
-        console.log(name)
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100&query=${name}`)
             .then(respApi => {
                 recipesApiName = respApi.data.results.map(r => {
@@ -97,8 +96,6 @@ router.get("/", (req, res) => {
                         id: r.dataValues.id
                     }
                 });
-
-                console.log(recipesDb)
                 const allRecipes = [...recipesApi, ...recipesDb];
                 return res.json(allRecipes)
             })
@@ -119,7 +116,7 @@ router.get("/:id", (req, res) => {
                 steps: respId.data.analyzedInstructions[0].steps,
                 image: respId.data.image,
                 types: diets,
-                id: r.id
+                id: respId.data.id
             }
             return res.json(infoId)
         })

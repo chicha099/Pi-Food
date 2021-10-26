@@ -7,12 +7,15 @@ import Card from './Card';
 import Nav from './Nav';
 import Sidebar from './Sidebar';
 import Pagination from './Pages';
+import { useHistory } from "react-router";
 import Details from './Details';
 import './Home.css';
 
 export default function Home() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const allRecipes = useSelector((state) => state.recipes);
+    const popupState = useSelector((state) => state.popup);
     const allTypes = useSelector((state) => state.types);
 
     const currentPage = useSelector((state) => state.page);
@@ -27,10 +30,12 @@ export default function Home() {
 
     function handleOrderByName(e) {
         dispatch(orderRecipesByName(e.target.value));
+        history.push('/home');
     }
 
     function handleOrderByRating(e) {
         dispatch(orderRecipesByRating(e.target.value));
+        history.push('/home');
     }
 
     return (
@@ -78,6 +83,12 @@ export default function Home() {
                             recipesPerPage={recipesPerPage}
                             allRecipes={allRecipes.length}
                         />
+                    </div>
+                    <div>
+                        {popupState ? (
+                            <Details />
+                        ) : ("")}
+
                     </div>
                 </div>
             ) :

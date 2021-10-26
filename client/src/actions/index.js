@@ -68,13 +68,20 @@ export function postRecipe(payload) {
 
 export function GetRecipeById(id) {
     return function (dispatch) {
-        axios.get(`http://localhost:3001/recipe/${id}`)
+        axios.get(`http://localhost:3001/recipes/${id}`)
             .then(resp => {
                 return dispatch({
                     type: 'SEARCH_ID',
                     payload: resp.data
                 })
             })
+    }
+}
+
+export function changePopup(payload) {
+    return {
+        type: 'CHANGE_POPUP',
+        payload
     }
 }
 
