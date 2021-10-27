@@ -104,22 +104,47 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
     const { id } = req.params;
-    axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${YOUR_API_KEY}`)
-        .then(respId => {
-            let diets;
-            respId.data.vegetarian ? diets = respId.data.diets.concat("vegetarian") : diets = respId.data.diets;
-            const infoId = {
-                title: respId.data.title,
-                summary: respId.data.summary,
-                spoonacularScore: respId.data.spoonacularScore,
-                healthScore: respId.data.healthScore,
-                steps: respId.data.analyzedInstructions[0].steps,
-                image: respId.data.image,
-                types: diets,
-                id: respId.data.id
+    if (id.length < 10) {
+        axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${YOUR_API_KEY}`)
+            .then(respId => {
+                let diets;
+                respId.data.vegetarian ? diets = respId.data.diets.concat("vegetarian") : diets = respId.data.diets;
+                const infoId = {
+                    title: respId.data.title,
+                    summary: respId.data.summary,
+                    spoonacularScore: respId.data.spoonacularScore,
+                    healthScore: respId.data.healthScore,
+                    steps: respId.data.analyzedInstructions.length !== 0 ? respId.data.analyzedInstructions[0].steps : [],
+                    image: respId.data.image,
+                    types: diets,
+                    id: respId.data.id
+                }
+                return res.json(infoId)
+            })
+    }
+    else {
+        Recipe.findOne({
+            where: { id: id },
+            include: {
+                model: Types,
+                attributes: ['name']
             }
-            return res.json(infoId)
         })
+            .then(respIdDb => {
+                recipesDb = {
+                    title: respIdDb.dataValues.title,
+                    summary: respIdDb.dataValues.summary,
+                    spoonacularScore: respIdDb.dataValues.spoonacularScore,
+                    healthScore: respIdDb.dataValues.healthScore,
+                    steps: respIdDb.dataValues.steps,
+                    image: respIdDb.dataValues.image,
+                    types: respIdDb.dataValues.types.map(t => { return t.name }),
+                    id: respIdDb.dataValues.id
+                };
+                return res.json(recipesDb);
+            })
+    }
+
 })
 
 router.post('/', (req, res) => {
