@@ -7,33 +7,33 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 3% 3% 3% 3%;
-    border-radius: 5%;
+    border-radius: 17px;
     justify-content: center;
     align-content: center;
 
     font-family: gba;
     font-size: x-large;
     color: whitesmoke;
-    border: 2px solid transparent;
+    /* border: 2px solid transparent; */
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .Img {
-    width: 310px;
+    width: 305px;
     height: 230px;
-    border-radius: 5%;
+    border-radius: 15px;
     background-color: whitesmoke;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .Card:hover {
-    border: 2px solid transparent;
+    /* border: 2px solid transparent; */
     cursor: pointer;
-    height: 470px;
+    transform: translateY(2px);
 }
 
 .cardDiv {
-    border-radius: 10%;
+    border-radius: 15px;
 }
 
 .wordsCard{

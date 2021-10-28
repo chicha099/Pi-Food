@@ -93,7 +93,7 @@ export default function Home() {
                 </div>
             ) :
                 <div className='loadingHome'>
-                    <img className='loadingMew' src="https://media3.giphy.com/media/IQebREsGFRXmo/200.gif" alt="" />
+                    <img className='loadingMew' src="https://bestanimations.com/media/loading-gears/1024724236loading-gears-animation-13-2.gif" alt="" />
                     <h2>Preparing the kitchen...</h2>
                 </div>
             }
