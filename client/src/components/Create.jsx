@@ -31,14 +31,12 @@ export default function Detail() {
         summary: ''
     });
 
-    console.log(input)
-
     function handleOnChange(e) {
         e.preventDefault();
         const name = e.target.name;
         let value = e.target.value;
 
-        if (name === "types") {
+        if (name === "types" && input.types.includes(value) === false) {
             value = [...input.types, value];
             setInput({
                 ...input,
@@ -51,7 +49,7 @@ export default function Detail() {
                 [name]: value
             })
         }
-        else {
+        else if(name !== "steps" && name !== "types"){
             setInput({
                 ...input,
                 [name]: value
@@ -97,7 +95,16 @@ export default function Detail() {
         dispatch(getTypes());
     }, [dispatch]);
 
-
+    let typesNames = [];
+    if (input.types.length !== 0) {
+        for (let i = 0; i < input.types.length; i++) {
+            for (let k = 0; k < allTypes.length; k++) {
+                if (input.types[i] == allTypes[k].id) {
+                    typesNames.push(allTypes[k].name[0].toUpperCase() + allTypes[k].name.slice(1) + " ")
+                }
+            }
+        }
+    }
     return (
         <div id='mainCreate' className='mainCreate'>
             <Nav />
@@ -169,7 +176,7 @@ export default function Detail() {
                         }
                         {!input.types ?
                             <h1 className='noName'>notypes</h1> :
-                            <h1>{input.types}</h1>
+                            <h1>{typesNames}</h1>
                         }
 
                         <h1>spoonacularScore: {input.spoonacularScore}</h1>
