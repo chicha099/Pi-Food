@@ -46,6 +46,7 @@
     justify-self: center;
     align-self: center;
     margin-left: 10%;
+    flex-direction: row;
 }
 
 .TitleNav:hover {

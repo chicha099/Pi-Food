@@ -35,7 +35,7 @@ export default function Nav() {
             <a className='Logo' onClick={(e) => handleGoHome(e)}>
                 <img src="./img/logonav.png" alt="" />
                 <div className='TitleNav'>
-                    <h2>HENRY</h2>
+                    <h2>D4C</h2>
                 </div>
             </a>
             <Link to='/create' className='CreateNav'>

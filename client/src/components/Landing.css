@@ -1,7 +1,7 @@
 .Landing {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://www.springhappenings.com/wp-content/uploads/2014/09/crsrxfllostehmuxwzqfkdarpcg0di40toehyl4mzmgrkmy3dpfzxttukvsmluvp-o.jpg');
+    background-image: url('https://i.ibb.co/py2DzDx/good-food-wallpaper-3840x2160.jpg');
     background-size: cover;
     background-position-y: -50px;
     display: flex;
@@ -11,11 +11,11 @@
 .Container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     height: 100%;
     justify-content: center;
     align-content: center;
-    margin-bottom: 10%;
+    margin-top: 12%;
 }
 
 @font-face {
@@ -26,28 +26,37 @@
   }
 
 .Title {
-    font-family: gba;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding-bottom: 5%;
     color: white;
-    font-size: xx-large;
-    -webkit-text-stroke: 1px #FFFFFF;
+    font-size: x-large;
+    /* -webkit-text-stroke: 1px #FFFFFF; */
     display: flex;
+    margin-left: 40%;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+  color: white;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 20px 20px rgba(0,0,0,.15);
 }
 
 .landingTitle {
  position: relative;
  top: 0;
+ margin: auto;
+ display: flex;
  transition: top 0.3s;
  margin-left: 0.2%;
+ color: black;
 }
 
 .landingTitle:hover {
-    top: -30px;
+    top: -5px;
     cursor: pointer;
-    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #4bdbff, 0 0 30px #4bdbff, 0 0 40px #4bdbff, 0 0 55px #4bdbff, 0 0 75px #4bdbff;
-    color: #FFFFFF;
+    /* text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #4bdbff, 0 0 30px #4bdbff, 0 0 40px #4bdbff, 0 0 55px #4bdbff, 0 0 75px #4bdbff; */
+    /* color: #FFFFFF; */
 }
 
 .hideTitle{
@@ -68,7 +77,8 @@
     align-content: center;
     height: 10%;
     width: 10%;
-    margin: 0 auto 0 auto;
+    margin-left: 50%;
+    position: fixed;
 }
 
 .Button {
@@ -77,34 +87,22 @@
     font-size: 40px;
     height: 100%;
     width: 100%;
+    border: 0px solid transparent;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .Button:hover {
-    border-radius: 50px;
     width: 90px;
     height: 90px;
-    transition-duration: 500ms;
-    border: 0.5px outset black;
+    transition-duration: 400ms;
     font-size: 0px;
-    box-shadow: 10px 0px 10px 10px rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset;
     border: 0px solid transparent;
 }
 
 .Button:hover:after {
-    content: 'GO!';
+    content: '⇶';
     font-size: 40px;
-    /* border: 0px solid transparent; */
+    border: 0px solid transparent;
 }
 
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 
