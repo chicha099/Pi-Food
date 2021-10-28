@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     align-content: flex-end;
-    margin-top: 3%;
+    /* margin-top: 3%; */
 }
 
 .allDet {
@@ -103,16 +103,9 @@
 color: #2e2e2e;
 }
 
-#pokeTypeDet1 {
-    font-size: 25px;
-    margin-left: 38%;
-text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
-color: #2e2e2e;
-}
-
-#pokeTypeDet2 {
-    font-size: 25px;
-    margin-left: 30%;
+.pokeTypeDet {
+    margin-bottom: 100%;
+    margin-right: 70%;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 color: #2e2e2e;
 }
@@ -140,29 +133,34 @@ color: #2e2e2e;
 
 .statHP {
     position: fixed;
-    bottom: 8%;
-    width: 70%;
+    bottom: 52%;
+    width: 50%;
+    left: 37%;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 color: #2e2e2e;
 }
 
 .statForce {
     position: fixed;
-    left: 46.2%;
+    left: 30%;
+    bottom: 40%;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 color: #2e2e2e;
 }
 
 .statDefense {
     position: fixed;
-    left: 47.4%;
+    left: 30%;
+    bottom: 37%;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 color: #2e2e2e;
 }
 
 .statSpeed {
     position: fixed;
-    left: 46.2%;
+    left: 40%;
+    bottom: 16%;
+    width: 50%;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 color: #2e2e2e;
 }

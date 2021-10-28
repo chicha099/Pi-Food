@@ -114,7 +114,9 @@ router.get("/:id", (req, res) => {
                     summary: respId.data.summary,
                     spoonacularScore: respId.data.spoonacularScore,
                     healthScore: respId.data.healthScore,
-                    steps: respId.data.analyzedInstructions.length !== 0 ? respId.data.analyzedInstructions[0].steps : [],
+                    steps: respId.data.analyzedInstructions.length !== 0 ? respId.data.analyzedInstructions[0].steps.map(s => {
+                        return s.step
+                    }) : [],
                     image: respId.data.image,
                     types: diets,
                     id: respId.data.id

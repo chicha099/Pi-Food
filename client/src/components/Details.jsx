@@ -32,20 +32,27 @@ export default function Details() {
                             <button onClick={() => handleClickPopup(false)} className='closeBut'>X</button>
                             <h1 className='pokeNameDet'>{recipeDetails.title}</h1>
                             <div className='imgDetailDiv'>
-                                <div className='specImg' id={recipeDetails.types[0]}>
-                                    <img className='imgDetail' src={recipeDetails.image} alt="" height='263px' />
-                                </div>
+                                <img className='imgDetail' src={recipeDetails.image} alt="" height='263px' />
+
                                 <div className='detailedInfo'>
-                                    <h3 className='stats' id='pokeTypeDet2'>{recipeDetails.types}</h3>
-                                    <div className='contChart'><h3 className='statHP'>{recipeDetails.summary}</h3></div>
+                                    <div className='pokeTypeDet'>
+                                        {
+                                            recipeDetails.types.map(t => {
+                                                return (
+                                                    <h3>{t[0].toUpperCase() + t.slice(1)}</h3>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                    <div className='contChart'><h3 className='statHP'>{recipeDetails.summary.replace(/(<([^>]+)>)/ig, '')}</h3></div>
 
-                                    <div className='contChart'> <h3 className='chart' >spoonacularScore:</h3> <h3 className='statForce'> {recipeDetails.spoonacularScore}</h3></div>
+                                    <div className='contChart'>  <h3 className='statForce'> SpoonacularScore: {recipeDetails.spoonacularScore}</h3></div>
 
 
-                                    <div className='contChart'> <h3 className='chart' >healthScore:</h3> <h3 className='statDefense'>{recipeDetails.healthScore}</h3></div>
+                                    <div className='contChart'>  <h3 className='statDefense'> HealthScore: {recipeDetails.healthScore}</h3></div>
 
 
-                                    <div className='contChart'> <h3 className='chart' >steps: </h3> <h3 className='statSpeed'>{recipeDetails.steps} </h3></div>
+                                    <div className='contChart'>  <h3 className='statSpeed'>{recipeDetails.steps} </h3></div>
 
                                 </div>
                             </div>
