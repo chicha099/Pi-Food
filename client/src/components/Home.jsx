@@ -93,8 +93,8 @@ export default function Home() {
                 </div>
             ) :
                 <div className='loadingHome'>
-                    <img className='loadingMew' src="https://bestanimations.com/media/loading-gears/1024724236loading-gears-animation-13-2.gif" alt="" />
-                    <h2>Preparing the kitchen...</h2>
+                    <img className='loadingMew' src="https://i.pinimg.com/originals/49/23/29/492329d446c422b0483677d0318ab4fa.gif" alt="" />
+                    <h2 className="loadingWords">Preparing the kitchen...</h2>
                 </div>
             }
         </div>

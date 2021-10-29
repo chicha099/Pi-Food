@@ -50,15 +50,26 @@
     display: flex;
     justify-content: center;
     margin-top: 15%;
+    left: -200px;
     flex-direction: column;
     align-content: center;
     font-family: gba;
+    position: fixed;
+    /* height: 300px; */
 }
 
 .loadingMew {
-    height: 200px;
-    width: 200px;
-    margin-left: 45%;
+    /* height: 200px;
+    width: 200px; */
+    position: fixed;
+    margin-top: 30%;
+    /* margin-left: 12%; */
+}
+
+.loadingWords {
+    position: fixed;
+    left: 122px;
+    top: 820px;
 }
 
 select {

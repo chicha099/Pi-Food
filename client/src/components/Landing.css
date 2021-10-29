@@ -92,17 +92,18 @@
 }
 
 .Button:hover {
-    width: 90px;
-    height: 90px;
+    /* width: 90px; */
+    /* height: 90px; */
     transition-duration: 400ms;
-    font-size: 0px;
+    /* font-size: 0px; */
+    transform: translateY(-2px);
     border: 0px solid transparent;
 }
 
-.Button:hover:after {
+/* .Button:hover:after {
     content: '⇶';
     font-size: 40px;
     border: 0px solid transparent;
-}
+} */
 
 
