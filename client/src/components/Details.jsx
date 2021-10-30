@@ -61,7 +61,7 @@ export default function Details() {
                 </div>
             ) : (
                 <div>
-                    <img src="https://media3.giphy.com/media/IQebREsGFRXmo/200.gif" alt="" />
+                    {/* <img src="https://media3.giphy.com/media/IQebREsGFRXmo/200.gif" alt="" /> */}
                 </div>
             )}
         </div>

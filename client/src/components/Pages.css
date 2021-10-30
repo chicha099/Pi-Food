@@ -19,7 +19,7 @@
 }
 
 .Page:hover {
-    transition-duration: 0.2s;
+    transition-duration: 200ms;
     /* background-color: #EB5E0B; */
     color: black;
     border: 1px solid transparent;
@@ -37,6 +37,6 @@
 .footer {
     height: auto;
     position: fixed;
-    bottom: 37px;
-    left: 960px
+    bottom: 11px;
+    left: 700px
 }

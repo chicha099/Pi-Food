@@ -19,7 +19,7 @@ export default function Home() {
     const allTypes = useSelector((state) => state.types);
 
     const currentPage = useSelector((state) => state.page);
-    const recipesPerPage = 12;
+    const recipesPerPage = 6;
     const lastRecipeIndex = currentPage * recipesPerPage;
     const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
     const currentRecipes = Array.isArray(allRecipes) ? allRecipes.slice(firstRecipeIndex, lastRecipeIndex) : [allRecipes];

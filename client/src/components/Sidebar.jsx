@@ -30,11 +30,11 @@ export default function Sidebar() {
                     <img src="/img/vegan.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="vegan" />
                     <p className="hiddenFilter">Vegan</p>
                 </div>
-                <div className='divForFilter'>
+                <div className='divForFilter2'>
                     <img src="/img/glutenfree.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="gluten free" />
                     <p className="hiddenFilter">Gluten Free</p>
                 </div>
-                <div className='divForFilter'>
+                <div className='divForFilter2'>
                     <img src="/img/dairy-free.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="dairy free" />
                     <p className="hiddenFilter">Dairy Free</p>
                 </div>
@@ -60,7 +60,7 @@ export default function Sidebar() {
                 </div>
                 <div className='divForFilter'>
                     <img src="/img/whole30.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="whole 30" />
-                    <p className="hiddenFilter">Whole 30</p>
+                    <p className="hiddenFilter">Whole30</p>
                 </div>
                 <div className='divForFilter'>
                     <img src="/img/ketogenic.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="ketogenic" />

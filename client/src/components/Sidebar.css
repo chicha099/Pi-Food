@@ -30,6 +30,7 @@
     display: flex;
     justify-content: center;
     font-family: gba;
+    font-size: large;
     color: rgb(10, 10, 10);
 }
 
@@ -39,7 +40,7 @@
     padding-left: 1%;
     transition-duration: 500ms;
     background-color: white;
-    width: 145px;
+    width: 157px;
     border-radius: 10px;
 }
 
@@ -51,9 +52,36 @@
     display: block;
 }
 
+.divForFilter2 {
+    /* background-color: yellow; */
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    font-family: gba;
+    font-size: large;
+    color: rgb(10, 10, 10);
+}
+
+.divForFilter2:hover {
+    cursor: pointer;
+    justify-content: flex-start;
+    padding-left: 1%;
+    transition-duration: 500ms;
+    background-color: white;
+    width: 139px;
+    border-radius: 10px;
+}
+
+.divForFilter2 p {
+    display: none;
+}
+
+.divForFilter2:hover p {
+    display: block;
+}
+
 .hiddenFilter {
     align-self: center;
     margin-left: 4%;
-    white-space: nowrap;
-    overflow: hidden;
 }

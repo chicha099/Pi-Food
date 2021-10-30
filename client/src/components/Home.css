@@ -3,7 +3,7 @@
     flex-direction: column;
     /* width: 100%; */
     padding-top: 3%;
-    margin-left: 285px;
+    margin-left: 250px;
 }
 
 .Recipes {
@@ -13,7 +13,7 @@
     flex-direction:row;
     column-gap: 1%;
     /* width: 70%; */
-    /* margin-top: 0.1%; */
+    margin-top: -1%;
 }
 
 .pageMarkers {
@@ -25,7 +25,7 @@
     font-size: small;
     height: 30px;
     border: 1px solid transparent;
-    background-color: #EB5E0B;
+    background-color: #4C4C6D;
     color: whitesmoke;
     border-radius: 2px;
     margin-left: 0.5%;
@@ -84,6 +84,6 @@ option {
 /* position: fixed; */
     margin-left: 76%;
     display: flex;
-    margin-top: 1.1%;
+    margin-top: -2%;
     position: fixed;
 }
