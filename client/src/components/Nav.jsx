@@ -51,7 +51,9 @@ export default function Nav() {
                 placeholder=' Search...'
                 onChange={(e) => handleInputChange(e)}
             />
-            <img src="./img/loupe.png" alt="" className='ButtonNav' onClick={(e) => handleSubmit(e)} />
+            <div className='ButtonNavDiv'>
+                <img src="./img/loupe.png" alt="" className='ButtonNav' onClick={(e) => handleSubmit(e)} />
+            </div>
         </div>
     )
 };

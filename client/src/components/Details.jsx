@@ -44,7 +44,7 @@ export default function Details() {
                                             })
                                         }
                                     </div>
-                                    <div className='contChart'><h3 className='statHP'>{recipeDetails.summary.replace(/(<([^>]+)>)/ig, '')}</h3></div>
+                                    <div className="statHPDiv"><h3 className='statHP'>{recipeDetails.summary.replace(/(<([^>]+)>)/ig, '')}</h3></div>
 
                                     <div className='contChart'>  <h3 className='statForce'> SpoonacularScore: {recipeDetails.spoonacularScore}</h3></div>
 
@@ -52,7 +52,7 @@ export default function Details() {
                                     <div className='contChart'>  <h3 className='statDefense'> HealthScore: {recipeDetails.healthScore}</h3></div>
 
 
-                                    <div className='contChart'>  <h3 className='statSpeed'>{recipeDetails.steps} </h3></div>
+                                    <div className='contChart'>  <h3 className='statSpeed2'>Preparation:</h3><h3 className='statSpeed'>{recipeDetails.steps} </h3></div>
 
                                 </div>
                             </div>
