@@ -1,109 +1,59 @@
 .SidebarDiv {
-    width: 30vw;
-    left: 60px;
-    top: 99px;
+    width: 1400px;
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    height: 50%;
-    position: fixed;
-    padding-bottom: 0.5%;
-    background-color: #2e2e2e;
-    max-width: 349px;
+    flex-direction: row;
+    justify-content: center;
+    height: 50px;
+    padding-bottom: 1.5%;
+    background-color: #e9e9e9;
     border-radius: 5px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
 }
 
 .Filter {
-    margin-left: 4%;
-    margin-top: 4.5%;
+    width: 1400px;
     display: flex;
+    justify-content: space-evenly;
+    /* align-content: space-between; */
+}
+
+.iconFilter {
+    height: 50px;
+    display: flex;
+    align-self: center;
+}
+
+.divForFilter {
+    /* background-color: yellow; */
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
     font-family: gba;
-    font-size: large;
+    color: rgb(10, 10, 10);
 }
 
-.ButtonFilterTypes {
-    height: 90%;
-    width: 20px;
-    border-radius: 50%;
+.divForFilter:hover {
     cursor: pointer;
-    background-color: #e0dfdc;
-    border: 0.5px solid transparent;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.ButtonFilterTypes:hover {
-    transition-duration: 300ms;
-}
-
-.ButtonFilterTypes:active {
-    transition-duration: 100ms;
-    width: 18px;
-    height: 18px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-}
-
-.ButtonFilterOther {
-    width: 20px;
-    border-radius: 50%;
-    height: 90%;
-    cursor: pointer;
-    background-color: #e0dfdc;
-    border: 0.5px solid transparent;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.ButtonFilterOther:hover {
-    transition-duration: 300ms;
-}
-
-.ButtonFilterOther:active {
-    transition-duration: 100ms;
-    width: 18px;
-    height: 18px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-}
-.Filter2 {
-    margin-left: 4%;
-    display: flex;
-    align-content: center; 
-    font-family: gba;
-    font-size: large;
-    flex-direction: column;
-}
-
-.OriginalsNCreated {
-    display: flex;
-    margin-top: 5%;
-}
-
-.Label {
-    margin-left: 3%;
-    cursor: pointer;
-    text-shadow: 0 -1px 0 #fff, 0 2px 2px #2e2e2e;
-    color: #e0dfdc;
-    font-size: 19.2px;
-    width: auto;
+    justify-content: flex-start;
     padding-left: 1%;
-    padding-right: 1%;
-    border-radius: 2px;
-    
+    transition-duration: 500ms;
+    background-color: white;
+    width: 145px;
+    border-radius: 10px;
 }
 
-.Label:hover {
-    transition-duration: 300ms;
-    margin-left: 3%;
-    color: #EB5E0B;
-    cursor: pointer;
-    text-shadow: 0 -1px 0 #fff, 0 2px 2px #2e2e2e;
-    color: #e0dfdc;
-    letter-spacing: 5px;
+.divForFilter p {
+    display: none;
 }
 
-.line {
-    position: fixed;
-    color: #fff;
-    top: 818px;
-    left: 225px;
-    opacity: 50%;
+.divForFilter:hover p {
+    display: block;
+}
+
+.hiddenFilter {
+    align-self: center;
+    margin-left: 4%;
+    white-space: nowrap;
+    overflow: hidden;
 }

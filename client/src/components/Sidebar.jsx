@@ -15,35 +15,83 @@ export default function Sidebar() {
 
     function handleFilterTypes(e) {
         dispatch(setPage(1));
-        dispatch(filterRecipesByType(e.target.value));
+        dispatch(filterRecipesByType(e.target.name));
+        console.log(e.target)
     }
-console.log(allTypes)
 
     return (
         <div className='SidebarDiv'>
-            <div>
-                {
-                    allTypes && allTypes.map(t => {
-                        let typeF = t.name[0].toUpperCase() + t.name.slice(1);
-                        return (
-                            <div className='Filter'>
-                                <div>
-                                    <button id={typeF} name="filters" value={t.name} className='ButtonFilterTypes' onClick={e => handleFilterTypes(e)} />
-                                </div>
-                                <label id={typeF.toLowerCase()} for={typeF} className='Label'>{typeF}</label>
-                            </div>
-                        )
-                    })
-                }
-                <div className='Filter2'>
-                    <div className='OriginalsNCreated'>
-                        <div >
-                            <button id='all' name="filters" value='all' onClick={e => handleFilterTypes(e)} className='ButtonFilterOther' />
-                        </div>
-                        <label for='all' className='Label'>All</label>
-                    </div>
+            <div className='Filter'>
+                <div className='divForFilter'>
+                    <img src="/img/vegetarian.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="vegetarian" />
+                    <p className="hiddenFilter">Vegetarian</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/vegan.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="vegan" />
+                    <p className="hiddenFilter">Vegan</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/glutenfree.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="gluten free" />
+                    <p className="hiddenFilter">Gluten Free</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/dairy-free.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="dairy free" />
+                    <p className="hiddenFilter">Dairy Free</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/ovo.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="lacto ovo vegetarian" />
+                    <p className="hiddenFilter">Lacto Ovo Vegetarian</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/paleo.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="paleolithic" />
+                    <p className="hiddenFilter">Paleolithic</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/primal.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="primal" />
+                    <p className="hiddenFilter">Primal</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/fish.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="pescatarian" />
+                    <p className="hiddenFilter">Pescatarian</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/fodmap.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="fodmap friendly" />
+                    <p className="hiddenFilter">Fodmap Friendly</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/whole30.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="whole 30" />
+                    <p className="hiddenFilter">Whole 30</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/ketogenic.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="ketogenic" />
+                    <p className="hiddenFilter">Ketogenic</p>
+                </div>
+                <div className='divForFilter'>
+                    <img src="/img/all.png" alt="" className='iconFilter' onClick={e => handleFilterTypes(e)} name="all" />
+                    <p className="hiddenFilter">All</p>
                 </div>
             </div>
+            {/* {
+                allTypes && allTypes.map(t => {
+                    let typeF = t.name[0].toUpperCase() + t.name.slice(1);
+                    return (
+                        <div className='Filter'>
+                            <div>
+                                <button id={typeF} name="filters" value={t.name} className='ButtonFilterTypes' onClick={e => handleFilterTypes(e)} />
+                            </div>
+                            <label id={typeF.toLowerCase()} for={typeF} className='Label'>{typeF}</label>
+                        </div>
+                    )
+                })
+            } */}
+            {/* <div className='Filter2'>
+                <div className='OriginalsNCreated'>
+                    <div >
+                        <button id='all' name="filters" value='all' onClick={e => handleFilterTypes(e)} className='ButtonFilterOther' />
+                    </div>
+                    <label for='all' className='Label'>All</label>
+                </div>
+            </div> */}
         </div>
     )
 };

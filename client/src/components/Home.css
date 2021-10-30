@@ -1,6 +1,6 @@
 .MainDiv {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* width: 100%; */
     padding-top: 3%;
     margin-left: 285px;
@@ -9,11 +9,11 @@
 .Recipes {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 161px;
+    /* margin-left: 161px; */
     flex-direction:row;
     column-gap: 1%;
-    width: 70%;
-    margin-top: 0.3%;
+    /* width: 70%; */
+    /* margin-top: 0.1%; */
 }
 
 .pageMarkers {
@@ -23,7 +23,7 @@
 .Font {
     font-family: gba;
     font-size: small;
-    height: 3%;
+    height: 30px;
     border: 1px solid transparent;
     background-color: #EB5E0B;
     color: whitesmoke;
@@ -82,6 +82,8 @@ option {
 
 .selectHome {
 /* position: fixed; */
-margin-left: 60%;
-display: flex;
+    margin-left: 76%;
+    display: flex;
+    margin-top: 1.1%;
+    position: fixed;
 }
