@@ -10,7 +10,7 @@ export default function LandingPage() {
                     <h1 className='landingTitle'> Tasty </h1>
                     <h1 className='landingTitle'> Meals </h1>
                     <h1 className='landingTitle'> Done </h1>
-                    <h1 className='landingTitle'> Dirt </h1>
+                    <h1 className='landingTitle'> Dirty </h1>
                     <h1 className='landingTitle'> Cheap </h1>
                 </div>
                 <div className='ButtonDiv'>

@@ -132,6 +132,8 @@
     text-shadow: -1px -1px 1px rgba(255,255,255,.1);
     color: #2e2e2e;
     text-align: left;
+    overflow-wrap: break-word;
+    width: 950px;
 }
 
 .statHPDiv{
@@ -165,6 +167,8 @@ color: #2e2e2e;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1);
     color: #2e2e2e;
     text-align: start;
+    
+    overflow-wrap: break-word;
 }
 
 .statSpeed2 {

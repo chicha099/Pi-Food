@@ -8,11 +8,21 @@ export default function About() {
         <div>
             <Nav />
             <div className='mainAbout'>
-                <h1>About Me</h1>
+                <h1>About</h1>
                 <div>
-                    <p>This is the about me route</p>
+                    <p>This SPA was made using:</p>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Redux</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>PostgreSQL</li>
+                        <li>Sequelize</li>
+                        <li>Spoonacular API</li>
+                    </ul>
                 </div>
-                <div>
+                <h1>Contact</h1>
+                <div className="logosboth">
                     <a href="https://github.com/chicha099" target='_blank'>
                         <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png" alt="" width='7%' />
                     </a>

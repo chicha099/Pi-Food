@@ -49,7 +49,7 @@ export default function Detail() {
                 [name]: value
             })
         }
-        else if(name !== "steps" && name !== "types"){
+        else if (name !== "steps" && name !== "types") {
             setInput({
                 ...input,
                 [name]: value
@@ -109,19 +109,47 @@ export default function Detail() {
         <div id='mainCreate' className='mainCreate'>
             <Nav />
             <div className='FormDiv'>
-                <h1>Create your own Recipe!</h1>
+                <h1 className="newRecipe">New recipe</h1>
                 <div className='formPrincipal'>
                     <form className='Form'>
-                        <div className='InputsCreate'>
+                        <div className='InputsCreate' id="formTitle">
                             {!errors.title ? null : <div className='ErrorCreate'>{errors.title}</div>}
-                            <label className=''>Title:</label>
+                            <label className=''>Title</label>
                             <input type="text" name="title" onChange={(e => handleOnChange(e))} value={input.title} />
                         </div>
-                        <div className='InputsCreate'>
+                        <div className='InputsCreate' id="formImage">
+                            {!errors.image ? null : <div className='ErrorCreate'>{errors.image}</div>}
+                            <label>Image</label>
+                            <input type="url" name="image" onChange={(e => handleOnChange(e))} value={input.image} placeholder='insert a valid url' />
+                        </div>
+
+                        <div className='InputsCreate' id="formSummary">
+                            {!errors.summary ? null : <div className='ErrorCreate'>{errors.summary}</div>}
+                            <label>Summary</label>
+                            <textarea type="text" name="summary" onChange={(e => handleOnChange(e))} value={input.summary} className="textareaSummary" />
+                        </div>
+                        <div className='InputsCreate' id="formSteps">
+                            {!errors.steps ? null : <div className='ErrorCreate'>{errors.steps}</div>}
+                            <label>Steps</label>
+                            <textarea type="text" name="steps" onChange={(e => handleOnChange(e))} value={input.steps} className="textareaSummary" />
+                        </div>
+
+                        <div className='InputsCreate' id="formSpoon">
+                            {!errors.spoonacularScore ? null : <div className='ErrorCreate'>{errors.spoonacularScore}</div>}
+                            <label>SpoonacularScore</label>
+                            <input type="number" name="spoonacularScore" onChange={(e => handleOnChange(e))} value={input.spoonacularScore} />
+                        </div>
+                        <div className='InputsCreate' id="formHealth">
+                            {!errors.healthScore ? null : <div className='ErrorCreate'>{errors.healthScore}</div>}
+                            <label>HealthScore</label>
+                            <input type="number" name="healthScore" onChange={(e => handleOnChange(e))} value={input.healthScore} />
+                        </div>
+
+                        <div className='InputsCreate' id="formTypes">
                             {!errors.types ? null : <div className='ErrorCreate'>{errors.types}</div>}
-                            <label>Types:</label>
+                            <label>Types</label>
                             <div className='typeInputs'>
-                                <select id='0' name="types" className='Options' onChange={(e => handleOnChange(e))}>
+                                <select id='0' name="types" className='Options' onChange={(e => handleOnChange(e))} >
                                     <option value="">Select Types</option>
                                     {
                                         allTypes && allTypes.map(t => {
@@ -134,55 +162,62 @@ export default function Detail() {
                                 </select>
                             </div>
                         </div>
-                        <div className='InputsCreate'>
-                            {!errors.image ? null : <div className='ErrorCreate'>{errors.image}</div>}
-                            <label>Image:</label>
-                            <input type="url" name="image" onChange={(e => handleOnChange(e))} value={input.image} placeholder='insert a valid url' />
-                        </div>
-                        <div className='InputsCreate'>
-                            {!errors.summary ? null : <div className='ErrorCreate'>{errors.summary}</div>}
-                            <label>Summary:</label>
-                            <input type="text" name="summary" onChange={(e => handleOnChange(e))} value={input.summary} />
-                        </div>
-                        <div className='InputsCreate'>
-                            {!errors.spoonacularScore ? null : <div className='ErrorCreate'>{errors.spoonacularScore}</div>}
-                            <label>spoonacularScore:</label>
-                            <input type="number" name="spoonacularScore" onChange={(e => handleOnChange(e))} value={input.spoonacularScore} />
-                        </div>
-                        <div className='InputsCreate'>
-                            {!errors.healthScore ? null : <div className='ErrorCreate'>{errors.healthScore}</div>}
-                            <label>healthScore:</label>
-                            <input type="number" name="healthScore" onChange={(e => handleOnChange(e))} value={input.healthScore} />
-                        </div>
-                        <div className='InputsCreate'>
-                            {!errors.steps ? null : <div className='ErrorCreate'>{errors.steps}</div>}
-                            <label>Steps:</label>
-                            <input type="text" name="steps" onChange={(e => handleOnChange(e))} value={input.steps} />
-                        </div>
                         <div >
                             <button className='buttonCreate' disabled={errors.title || errors.image || errors.types || errors.summary || errors.steps || errors.spoonacularScore || errors.healthScore} type="submit" onClick={(e => handlePost(e))}>Create</button>
                         </div>
                     </form>
-                    <div className='statsForm'>
-                        {!input.title ?
-                            <h1 className='noName'>-</h1> :
-                            <h1>{input.title && input.title[0].toUpperCase() + input.title.slice(1)}</h1>
-                        }
-                        {!input.image ?
-                            <img src="https://loadslammer.com/wp-content/uploads/2021/01/photo-placeholder-icon-17.jpg" alt="" width='300px' /> :
-                            <div className='formStatsImg'>
-                                <img src={input.image} alt="" width='300px' />
-                            </div>
-                        }
-                        {!input.types ?
-                            <h1 className='noName'>notypes</h1> :
-                            <h1>{typesNames}</h1>
-                        }
+                    <div className="showStats">
+                        <div className="showTitle">
+                            <h1>{input.title}</h1>
+                        </div>
+                        <div className="showImageNSummary">
+                            <div>
+                                {
+                                    input.image.length > 0 ?
+                                    <img src={input.image} alt="Insert An Image" width="500px" height="300px" className="showImage" /> :
+                                    ""
 
-                        <h1>spoonacularScore: {input.spoonacularScore}</h1>
-                        <h1>healthScore: {input.healthScore}</h1>
-                        <h1>Summary: {input.summary}</h1>
-                        <h1>Steps: {input.steps}</h1>
+                                }
+                            </div>
+                            <div className="showSummary">
+                                <p>{input.summary}</p>
+                            </div>
+                        </div>
+                        <div className="showScoreNTypesWithSteps">
+                            <div className="showScoreNTypes">
+                                <div className="showScores">
+                                    <div>
+                                        {
+                                            input.spoonacularScore ?
+                                                <h3>SpoonacularScore: {input.spoonacularScore}</h3> :
+                                                <h3></h3>
+                                        }
+                                    </div>
+                                    <div>
+                                        {
+                                            input.healthScore ?
+                                                <h3>HealthScore: {input.healthScore}</h3> :
+                                                <h3></h3>
+                                        }
+                                    </div>
+                                </div>
+                                <div className="showTypes">
+                                    {typesNames && typesNames.map(t => {
+                                        return (
+                                            <h3 className="typesShowedEach">{t}</h3>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                            <div className="showSteps">
+                                {
+                                    input.steps.length > 0 ?
+                                        <h3>Preparation:</h3> :
+                                        <h3></h3>
+                                }
+                                {input.steps}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

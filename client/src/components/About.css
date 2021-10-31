@@ -1,7 +1,13 @@
 .mainAbout {
     padding-top: 6%;
+    font-family: gba;
 }
 
 .aboutLogo {
     margin-left: 1%;
+}
+
+.logosboth {
+    position: fixed;
+    bottom: 480px;
 }

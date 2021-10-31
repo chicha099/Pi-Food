@@ -10,7 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 50%;
+    width: 300px;
+    row-gap: 20px;
 }
 
 .FormDiv {
@@ -19,7 +20,7 @@
 
 .InputsCreate{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     column-gap: 1%;
     margin-top: 2%;
     margin-left: 40%;
@@ -27,10 +28,16 @@
     height: 30px;
 }
 
+.InputsCreate label {
+    align-self: flex-start;
+    margin-bottom: 3px;
+    font-size: 20px;
+}
+
 .typeInputs {
     display: flex;
     flex-direction: row;
-    width: 30.4%;
+    width: 180px;
 }
 
 .sInput {
@@ -44,51 +51,153 @@
 .ErrorCreate {
     color: red;
     display: flex;
+    position: fixed;
+    left: 110px;
 }
 
 .buttonCreate {
-    margin-top: 1%;
-    margin-left: 81.8%;
-    width: 18.2%;
     height: 40px;
+    position: fixed;
     font-family: gba;
     font-size: large;
     border: 0xp solid transparent;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    width: 190px;
+    left: 327px;
+    top: 668px;
 }
-
-.buttonCreate:hover {
-    width: 20%;
-    height: 42px;
-    margin-left: 81%;
-}
-
 
 .formPrincipal {
     display: flex;
     flex-direction: row;
 }
 
-.statsForm {
-    width: 40%;
-    padding-bottom: 0.5%;
-    margin-left: 2%;
-    margin-top: 1%;
-    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
-    color: #2e2e2e;
+#formTitle {
+    width: 400px;
+}
+
+#formTypes {
+    width: 400px;
+}
+
+#formImage {
+    width: 400px;
+}
+
+#formSummary {
+    width: 400px;
+    height: 130px;
+    resize: none;
+    margin-top: 0px;
+}
+
+#formSummary input {
+    height: 100px;
+}
+
+#formSpoon {
+    width:195px;
+}
+
+#formHealth {
+    width:195px;
+    position: fixed;
+    right: 1400px;
+    top: 584px;
+}
+
+#formSteps {
+    width: 400px;
+    height: 130px;
+    margin-top: 0px;
+}
+
+.scoresFrom {
+    display: flex;
+    flex-direction: row;
+}
+
+.textareaSummary {
+    height: 200px;
+}
+
+.newRecipe {
+    margin-right: 1500px;
+    margin-bottom: 50px;
+}
+
+.showStats {
     border: 1px solid black;
-    border-radius: 1%;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 1200px;
+    height: 640px;
+    position: fixed;
+    left: 600px;
+    bottom: 200px;
+    border-radius: 10px;
 }
 
-.noName{
-    color: whitesmoke;
-    text-shadow: -1px -1px 1px whitesmoke, 1px 1px 1px whitesmoke;
-}
-.formStatsImg {
-    background-color: rgb(209, 209, 209);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+.showImageNSummary{
+    display: flex;
+    flex-direction: row;
     
+    overflow-wrap: break-word;
 }
 
+.showScores {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+.showTypes {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    text-align: left;
+}
+
+.showScoreNTypes {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.typesShowedEach {
+    width: 300px;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.showSteps {
+    width: 790px;
+    flex-wrap: nowrap;
+    margin: auto;
+    overflow-wrap: break-word;
+    text-align: left;
+    margin-left: 100px;
+    margin-top: -10px;
+    max-height: 260px;
+    overflow: hidden;
+}
+
+.showScoreNTypesWithSteps {
+    display: flex;
+    flex-direction: row;
+}
+
+.showImage {
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.showTitle {
+    display: flex;
+    margin-left: 20px;
+}
+
+.showSummary {
+    margin-left: 20px;
+    text-align: left;
+    max-height: 300px;
+    overflow: hidden;
+}

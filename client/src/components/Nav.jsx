@@ -31,20 +31,27 @@ export default function Nav() {
 
     return (
         <div className='NavDiv'>
-
             <a className='Logo' onClick={(e) => handleGoHome(e)}>
                 <img src="./img/logonav.png" alt="" />
                 <div className='TitleNav'>
                     <h2>D4C</h2>
                 </div>
             </a>
-            <Link to='/create' className='CreateNav'>
-                <h2> Create </h2>
-                <h2> Recipe </h2>
-            </Link>
-            <Link to='/about' className='AboutNav'>
-                <h2>About</h2>
-            </Link>
+            <div className="dropdown">
+                <img src="./img/drop.png" alt="" width="70px" />
+                <div className="dropdown-content">
+                    <div className="dropdownEach">
+                        <Link to='/create' className="dropdownEach">
+                            <h2> New Recipe</h2>
+                        </Link>
+                    </div>
+                    <div className="dropdownEach">
+                        <Link to='/about' className="dropdownEach">
+                            <h2>About</h2>
+                        </Link>
+                    </div>
+                </div>
+            </div>
             <input
                 type='text'
                 className='Input'
