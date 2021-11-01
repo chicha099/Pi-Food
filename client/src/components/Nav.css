@@ -22,7 +22,7 @@
 .ButtonNav {
     height: 2.5%;
     align-self: center;
-    /* right: 4.7%; */
+    right: 4.7%;
     top: 12px;
     cursor: pointer;
     position: fixed;
@@ -52,38 +52,6 @@
 }
 
 .TitleNav:hover {
-    text-shadow: 0 0 1px rgb(255, 255, 255);
-    color: #FFFFFF;
-}
-
-.CreateNav {
-    display: flex;
-    color: whitesmoke;
-    justify-self: center;
-    align-self: center;
-    margin-right: 3%;
-    flex-direction: row;
-    column-gap: 5%;
-    font-family: gba;
-}
-
-.CreateNav:hover {
-    text-shadow: 0 0 1px rgb(255, 255, 255);
-    color: #FFFFFF;
-}
-
-.AboutNav {
-    display: flex;
-    color: whitesmoke;
-    justify-self: center;
-    align-self: center;
-    /* margin-right: 52%; */
-    flex-direction: row;
-    column-gap: 5%;
-    font-family: gba;
-}
-
-.AboutNav:hover {
     text-shadow: 0 0 1px rgb(255, 255, 255);
     color: #FFFFFF;
 }
