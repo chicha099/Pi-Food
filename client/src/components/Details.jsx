@@ -30,12 +30,12 @@ export default function Details() {
                     <div id='mainDetail' className='mainDetail'>
                         <div id='bigCard' className='bigCard'>
                             <button onClick={() => handleClickPopup(false)} className='closeBut'>X</button>
-                            <h1 className='pokeNameDet'>{recipeDetails.title}</h1>
+                            <h1 className='resNameDet'>{recipeDetails.title}</h1>
                             <div className='imgDetailDiv'>
                                 <img className='imgDetail' src={recipeDetails.image} alt="" height='263px' />
 
                                 <div className='detailedInfo'>
-                                    <div className='pokeTypeDet'>
+                                    <div className='resTypeDet'>
                                         {
                                             recipeDetails.types.map(t => {
                                                 return (
@@ -44,15 +44,15 @@ export default function Details() {
                                             })
                                         }
                                     </div>
-                                    <div className="statHPDiv"><h3 className='statHP'>{recipeDetails.summary.replace(/(<([^>]+)>)/ig, '')}</h3></div>
+                                    <div className="statSummDiv"><h3 className='statSumm'>{recipeDetails.summary.replace(/(<([^>]+)>)/ig, '')}</h3></div>
 
-                                    <div className='contChart'>  <h3 className='statForce'> SpoonacularScore: {recipeDetails.spoonacularScore}</h3></div>
-
-
-                                    <div className='contChart'>  <h3 className='statDefense'> HealthScore: {recipeDetails.healthScore}</h3></div>
+                                    <div className='contChart'>  <h3 className='statRes1'> SpoonacularScore: {recipeDetails.spoonacularScore}</h3></div>
 
 
-                                    <div className='contChart'>  <h3 className='statSpeed2'>Preparation:</h3><h3 className='statSpeed'>{recipeDetails.steps} </h3></div>
+                                    <div className='contChart'>  <h3 className='statRes2'> HealthScore: {recipeDetails.healthScore}</h3></div>
+
+
+                                    <div className='contChart'>  <h3 className='statRes4'>Preparation:</h3><h3 className='statRes3'>{recipeDetails.steps} </h3></div>
 
                                 </div>
                             </div>
