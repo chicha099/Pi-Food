@@ -1,13 +1,12 @@
 import react from 'react';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getTypes, setPage } from '../actions';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { filter50, getTypes, setPage } from '../actions';
 import { filterRecipesByType } from '../actions';
 import './Sidebar.css';
 
 export default function Sidebar() {
     const dispatch = useDispatch();
-    const allTypes = useSelector((state) => state.types);
 
     useEffect(() => {
         dispatch(getTypes());
@@ -19,6 +18,10 @@ export default function Sidebar() {
         console.log(e.target)
     }
 
+    function handleFilter50(e) {
+        dispatch(setPage(1));
+        dispatch(filter50());
+    }
     return (
         <div className='SidebarDiv'>
             <div className='Filter'>
@@ -71,27 +74,9 @@ export default function Sidebar() {
                     <p className="hiddenFilter">All</p>
                 </div>
             </div>
-            {/* {
-                allTypes && allTypes.map(t => {
-                    let typeF = t.name[0].toUpperCase() + t.name.slice(1);
-                    return (
-                        <div className='Filter'>
-                            <div>
-                                <button id={typeF} name="filters" value={t.name} className='ButtonFilterTypes' onClick={e => handleFilterTypes(e)} />
-                            </div>
-                            <label id={typeF.toLowerCase()} for={typeF} className='Label'>{typeF}</label>
-                        </div>
-                    )
-                })
-            } */}
-            {/* <div className='Filter2'>
-                <div className='OriginalsNCreated'>
-                    <div >
-                        <button id='all' name="filters" value='all' onClick={e => handleFilterTypes(e)} className='ButtonFilterOther' />
-                    </div>
-                    <label for='all' className='Label'>All</label>
-                </div>
-            </div> */}
+            <div>
+                <button onClick={e => handleFilter50(e)}> +50</button>
+            </div>
         </div>
     )
 };

@@ -73,7 +73,8 @@ router.get("/", (req, res) => {
                         steps: r.analyzedInstructions[0],
                         image: r.image,
                         types: diets,
-                        id: r.id
+                        id: r.id,
+                        cuisines: r.cuisines
                     }
                 });
                 return (Recipe.findAll({
@@ -119,7 +120,8 @@ router.get("/:id", (req, res) => {
                     }) : [],
                     image: respId.data.image,
                     types: diets,
-                    id: respId.data.id
+                    id: respId.data.id,
+                    cuisines: respId.data.cuisines
                 }
                 return res.json(infoId)
             })

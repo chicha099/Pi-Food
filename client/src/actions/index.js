@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getRecipes() {
     return function (dispatch) {
-        axios.get('http://localhost:3001/recipes')
+        axios.get('/recipes')
             .then(resp => {
                 return dispatch({
                     type: 'GET_RECIPES',
@@ -14,7 +14,7 @@ export function getRecipes() {
 
 export function getTypes() {
     return function (dispatch) {
-        axios.get('http://localhost:3001/types')
+        axios.get('/types')
             .then(resp => {
                 return dispatch({
                     type: 'GET_TYPES',
@@ -47,7 +47,7 @@ export function orderRecipesByRating(payload) {
 
 export function searchName(name) {
     return function (dispatch) {
-        axios.get(`http://localhost:3001/recipes?query=${name}`)
+        axios.get(`/recipes?query=${name}`)
             .then(resp => {
                 return dispatch({
                     type: 'SEARCH_NAME',
@@ -59,7 +59,7 @@ export function searchName(name) {
 
 export function postRecipe(payload) {
     return function (dispatch) {
-        axios.post('http://localhost:3001/recipes', payload)
+        axios.post('/recipes', payload)
             .then(resp => {
                 return resp;
             })
@@ -68,7 +68,7 @@ export function postRecipe(payload) {
 
 export function GetRecipeById(id) {
     return function (dispatch) {
-        axios.get(`http://localhost:3001/recipes/${id}`)
+        axios.get(`/recipes/${id}`)
             .then(resp => {
                 return dispatch({
                     type: 'SEARCH_ID',
@@ -96,4 +96,11 @@ export function setPage(payload) {
         type: 'SET_PAGE',
         payload
     }
+}
+
+export function filter50(payload) {
+return {
+    type : 'FILTER_50',
+    payload
+}
 }

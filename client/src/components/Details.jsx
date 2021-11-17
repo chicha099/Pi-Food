@@ -54,6 +54,8 @@ export default function Details() {
 
                                     <div className='contChart'>  <h3 className='statRes4'>Preparation:</h3><h3 className='statRes3'>{recipeDetails.steps} </h3></div>
 
+                                    <div> <h3>{recipeDetails.cuisines}</h3></div>
+
                                 </div>
                             </div>
                         </div>

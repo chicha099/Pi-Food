@@ -43,6 +43,13 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 recipes: typesFiltered
             };
+            case 'FILTER_50':
+                const allREcipes = state.allRecipes;
+                const filtered50 = allREcipes.filter(r => r.spoonacularScore > 50);
+                return {
+                    ...state,
+                    recipes: filtered50
+                }
         case 'ORDER_BY_NAME':
             const recipesOrdername = state.recipes;
             let orderedNames = action.payload === 'alpha-Asc' ?
