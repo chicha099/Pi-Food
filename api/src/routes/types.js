@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
     Types.findAll()
         .then(resp => {
-            return res.json(resp)
+            return res.json("hi")
         }
         )
 });
