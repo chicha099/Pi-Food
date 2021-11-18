@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
+    "start": "serve -s build",
     "forever": "forever index.js",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
@@ -25,7 +25,8 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "pg": "^8.5.1",
-    "sequelize": "^6.9.0"
+    "sequelize": "^6.9.0",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
