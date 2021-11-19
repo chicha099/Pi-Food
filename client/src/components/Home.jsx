@@ -28,9 +28,9 @@ export default function Home() {
         dispatch(getRecipes());
     }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(getTypes());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(getTypes());
+    // }, [dispatch]);
 
     function handleOrderByName(e) {
         dispatch(orderRecipesByName(e.target.value));

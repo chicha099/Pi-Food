@@ -1,7 +1,7 @@
 import react from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { filter50, getTypes, setPage } from '../actions';
+import { filter50, getTypes, postTypes, setPage } from '../actions';
 import { filterRecipesByType } from '../actions';
 import './Sidebar.css';
 
@@ -10,6 +10,10 @@ export default function Sidebar() {
 
     useEffect(() => {
         dispatch(getTypes());
+    }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(postTypes());
     }, [dispatch]);
 
     function handleFilterTypes(e) {

@@ -24,6 +24,15 @@ export function getTypes() {
     }
 }
 
+export function postTypes(payload) {
+    return function (dispatch) {
+        axios.post('/types', payload)
+            .then(resp => {
+                return resp;
+            })
+    }
+}
+
 export function filterRecipesByType(payload) {
     return {
         type: 'FILTER_BY_TYPE',
