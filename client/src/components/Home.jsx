@@ -1,7 +1,7 @@
 import react from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRecipes, orderRecipesByName, orderRecipesByRating } from '../actions';
+import { getRecipes, orderRecipesByName, orderRecipesByRating, getTypes} from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 import Nav from './Nav';
@@ -31,7 +31,7 @@ export default function Home() {
     useEffect(() => {
         dispatch(getTypes());
     }, [dispatch]);
-    
+
     function handleOrderByName(e) {
         dispatch(orderRecipesByName(e.target.value));
         history.push('/home');
