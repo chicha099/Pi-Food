@@ -74,9 +74,6 @@ export default function Sidebar() {
                     <p className="hiddenFilter">All</p>
                 </div>
             </div>
-            <div>
-                <button onClick={e => handleFilter50(e)}> +50</button>
-            </div>
         </div>
     )
 };
