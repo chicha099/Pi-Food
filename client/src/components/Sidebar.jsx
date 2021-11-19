@@ -18,10 +18,6 @@ export default function Sidebar() {
         console.log(e.target)
     }
 
-    function handleFilter50(e) {
-        dispatch(setPage(1));
-        dispatch(filter50());
-    }
     return (
         <div className='SidebarDiv'>
             <div className='Filter'>
